@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+$header-color: #1b1c20;
+$body-color: #383a47;
+$text3-color: #797b89;
+$text4-color: #c6c8d3;
+$natural-color: #ffffff;
+$background-1: #474958;
+$background-2: #e8e9ed;
+$background-3: #f8f8fa;
+$primary1-color: #fb8e0b;
+$primary2-color: #fd6003;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+}
+
+@mixin btn($p) {
+  background-color: $primary1-color;
+  color: $natural-color;
+  padding: $p;
+  border-radius: 8px;
+}
+
+@mixin heading1($size: 3rem, $lineHeight: 56px, $color: $header-color) {
+  font-size: $size;
+  line-height: $lineHeight;
+  font-weight: 700;
+  color: $color;
+}
+
+@mixin min($bp, $max: "null", $device: "screen") {
+  @if $max == "null" {
+    @media only #{$device} and (min-width: #{$bp}) {
+      @content;
+    }
+  } @else {
+    @media only #{$device} and (min-width: #{$bp}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}
+
+@function bp($bp) {
+  @return map-get($breakpoints, $bp);
+}
+
+$breakpoints: (
+  na: 0px,
+  // For BS grid
+  xs: 320px,
+  // Smartphone
+  sm: 600px,
+  // Tablets
+  md: 900px,
+  // Tablets Landscape and small desktops
+  lg: 1290px,
+  // Desktops
+);
+
+@function container($container-size, $true-val: false) {
+  @return map-get($container-sizes, $container-size);
+}
+
+$container-sizes: (
+  sm: map-get($breakpoints, sm) - 30px,
+  md: map-get($breakpoints, md) - 40px,
+  lg: map-get($breakpoints, lg) - 0px,
+  xl: map-get($breakpoints, xl) - 400px,
+);
+
+.container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  &:not(.is-fluid) {
+    margin: 0 auto;
+
+    @each $bp, $container-size in $container-sizes {
+      @include min(#{bp(#{$bp})}) {
+        width: 100%;
+        max-width: container(#{$bp});
+      }
+    }
+  }
+}
+
+@each $bp, $container-size in $container-sizes {
+  .container-#{$bp} {
+    margin: 0 auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+
+    $i: index($container-sizes, $bp $container-size);
+
+    @for $j from $i through length($container-sizes) {
+      @include min(#{bp(nth(nth($container-sizes, $j), 1))}) {
+        max-width: container(#{nth(nth($container-sizes, $j), 1)});
+      }
+    }
+  }
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+}
+
+header {
+  padding-top: 21px;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+    }
+
+    .registration {
+      button {
+        @include btn(13px 20px);
+        margin-left: 34px;
+      }
+    }
+  }
+}
+
+#showcase {
+  margin-top: 57px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+      h1 {
+        @include heading1(50px, 60px);
+      }
+
+      .contentText {
+        margin-top: 29px;
+        font-size: 18px;
+        line-height: 32px;
+        color: $body-color;
+        mix-blend-mode: normal;
+        opacity: 0.8;
+      }
+
+      button {
+        margin-top: 29px;
+        @include btn(16px 23px);
+        span {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+        }
+      }
+
+      .ratings {
+        margin-top: 109px;
+        display: flex;
+        align-items: center;
+
+        .happyCustomers {
+          display: flex;
+          align-items: center;
+
+          .inNumbers {
+            padding: 0 28px 0 20px;
+          }
+          p {
+            color: $body-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+#priorities {
+  padding: 80px 0px 65px 0;
+  .container {
+    h1 {
+      @include heading1(36px);
+      text-align: center;
+    }
+
+    .priority {
+      margin-top: 46px;
+      display: flex;
+      align-items: center;
+
+      & > div {
+        padding: 28px 27px 32px 30px;
+        display: flex;
+
+        .text {
+          margin-left: 22px;
+
+          h4 {
+            @include heading1(21px, 33px);
+          }
+
+          p {
+            margin-top: 12px;
+            color: $body-color;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

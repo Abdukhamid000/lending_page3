@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.container:not(.is-fluid) {
+  margin: 0 auto;
+}
+@media only screen and (min-width: 600px) {
+  .container:not(.is-fluid) {
+    width: 100%;
+    max-width: 570px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .container:not(.is-fluid) {
+    width: 100%;
+    max-width: 860px;
+  }
+}
+@media only screen and (min-width: 1290px) {
+  .container:not(.is-fluid) {
+    width: 100%;
+    max-width: 1290px;
+  }
+}
+@media only screen and (min-width: ) {
+  .container:not(.is-fluid) {
+    width: 100%;
+    max-width: -400px;
+  }
+}
+
+.container-sm {
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+  .container-sm {
+    max-width: 570px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .container-sm {
+    max-width: 860px;
+  }
+}
+@media only screen and (min-width: 1290px) {
+  .container-sm {
+    max-width: 1290px;
+  }
+}
+@media only screen and (min-width: ) {
+  .container-sm {
+    max-width: -400px;
+  }
+}
+
+.container-md {
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+}
+@media only screen and (min-width: 900px) {
+  .container-md {
+    max-width: 860px;
+  }
+}
+@media only screen and (min-width: 1290px) {
+  .container-md {
+    max-width: 1290px;
+  }
+}
+@media only screen and (min-width: ) {
+  .container-md {
+    max-width: -400px;
+  }
+}
+
+.container-lg {
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+}
+@media only screen and (min-width: 1290px) {
+  .container-lg {
+    max-width: 1290px;
+  }
+}
+@media only screen and (min-width: ) {
+  .container-lg {
+    max-width: -400px;
+  }
+}
+
+.container-xl {
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+}
+@media only screen and (min-width: ) {
+  .container-xl {
+    max-width: -400px;
+  }
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+}
+
+header {
+  padding-top: 21px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container ul {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+header .container .registration button {
+  background-color: #fb8e0b;
+  color: #ffffff;
+  padding: 13px 20px;
+  border-radius: 8px;
+  margin-left: 34px;
+}
+
+#showcase {
+  margin-top: 57px;
+}
+#showcase .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#showcase .container .content h1 {
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 700;
+  color: #1b1c20;
+}
+#showcase .container .content .contentText {
+  margin-top: 29px;
+  font-size: 18px;
+  line-height: 32px;
+  color: #383a47;
+  mix-blend-mode: normal;
+  opacity: 0.8;
+}
+#showcase .container .content button {
+  margin-top: 29px;
+  background-color: #fb8e0b;
+  color: #ffffff;
+  padding: 16px 23px;
+  border-radius: 8px;
+}
+#showcase .container .content button span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+#showcase .container .content .ratings {
+  margin-top: 109px;
+  display: flex;
+  align-items: center;
+}
+#showcase .container .content .ratings .happyCustomers {
+  display: flex;
+  align-items: center;
+}
+#showcase .container .content .ratings .happyCustomers .inNumbers {
+  padding: 0 28px 0 20px;
+}
+#showcase .container .content .ratings .happyCustomers p {
+  color: #383a47;
+}
+
+#priorities {
+  padding: 80px 0px 65px 0;
+}
+#priorities .container h1 {
+  font-size: 36px;
+  line-height: 56px;
+  font-weight: 700;
+  color: #1b1c20;
+  text-align: center;
+}
+#priorities .container .priority {
+  margin-top: 46px;
+  display: flex;
+  align-items: center;
+}
+#priorities .container .priority > div {
+  padding: 28px 27px 32px 30px;
+  display: flex;
+}
+#priorities .container .priority > div .text {
+  margin-left: 22px;
+}
+#priorities .container .priority > div .text h4 {
+  font-size: 21px;
+  line-height: 33px;
+  font-weight: 700;
+  color: #1b1c20;
+}
+#priorities .container .priority > div .text p {
+  margin-top: 12px;
+  color: #383a47;
+  font-size: 16px;
+  line-height: 24px;
+}/*# sourceMappingURL=main.css.map */
