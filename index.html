@@ -16,7 +16,7 @@
           </a>
         </div>
 
-        <ul>
+        <ul id="togglerList">
           <li><a href="#">Demos</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Blog</a></li>
@@ -33,6 +33,7 @@
         <span id="toggler">
           <img src="./images/Toggler.svg" alt="" />
         </span>
+       
       </div>
     </header>
 
@@ -264,5 +265,13 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const togglerList = document.querySelector("#togglerList");
+
+      document.querySelector("#toggler").addEventListener("click", () => {
+        togglerList.classList.toggle("togglerClass");
+      });
+    </script>
   </body>
 </html>
